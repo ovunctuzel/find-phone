@@ -1,0 +1,8 @@
+path: '../find-phone'
+train: 'dataset_train/images'
+val: 'dataset_validation/images'
+test: 'dataset_test/images'
+
+nc: 1
+names:
+  0: 'phone'
