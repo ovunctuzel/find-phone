@@ -5,16 +5,17 @@ A simple detector to find phones on the floor and report their coordinates in th
 
 
 ## Usage
-Install dependencies:
+1. Install dependencies:
 ```pip install -r requirements.txt```
 
-Train a model:
+2. Train a new model:
+###### Note that this will overwrite the pretrained model, skip this step for using the pretrained model
 ```
 cd find_phone
 python train_phone_finder.py path_to_dataset_folder
 ```
 
-Perform inference:
+3. Perform inference:
 ```
 python find_phone.py path_to_image.jpg
 ```
