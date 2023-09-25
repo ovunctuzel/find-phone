@@ -43,4 +43,8 @@ If we are interested in detecting phones of various sizes we can do one or more 
 - Alternatively we could use augmentation techniques like cropping and padding, or pasting the phones onto a variety of backgrounds to add different sized phones to our dataset
 
 If we are interested in detecting multiple phones, we can combine a set of training images into a single image, similar to YOLO's mosaic augmentation. 
-That being said, YOLO does some of this under the hood anyway so it might accurately detect multiple phones already. 
+That being said, YOLO does some of this under the hood anyway so it might accurately detect multiple phones already.
+
+Another improvement can be adding more tests, for example something similar to the automated testing criteria outlined in the instructions document
+that takes a model and compares the model output to the labels. If correct detection occurs on 4 out of 8 test images, the test will pass.
+Testing was performed using the --visualize flag in this case, but automated tests are an integral part of any project that would run in production.  
