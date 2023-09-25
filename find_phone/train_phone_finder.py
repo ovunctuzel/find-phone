@@ -32,5 +32,5 @@ if __name__ == '__main__':
 
     # Train a YOLOv8s model with the provided data
     print("Starting YOLOv8 model training...")
-    train_model(epochs=1)
+    train_model(epochs=25)
 

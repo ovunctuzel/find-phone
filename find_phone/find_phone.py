@@ -11,7 +11,7 @@ class PhoneFinder:
     def find_phone(self, image_path):
         model = YOLO(self.model_path)
         image = cv2.imread(image_path)
-        boxes = model.predict(image_path)[0].boxes
+        boxes = model.predict(image_path, verbose=False)[0].boxes
         # Convert to [xmin, ymin, xmax, ymax, label] format
         boxes = [[*boxes.xyxy.tolist()[i], boxes.cls.tolist()[i]] for i in range(len(boxes))]
         if len(boxes) > 0:
@@ -42,7 +42,8 @@ if __name__ == '__main__':
     if os.path.isfile(args.image_path):
         image_paths = [args.image_path]
     else:
-        image_paths = [os.path.join(args.image_path, filename) for filename in os.listdir(args.image_path)]
+        image_paths = [os.path.join(args.image_path, filename) for filename in os.listdir(args.image_path)
+                       if os.path.splitext(filename)[-1] in ['.jpeg', '.jpg', '.png']]
 
     for image_path in image_paths:
         output = phone_finder.find_phone(image_path)
