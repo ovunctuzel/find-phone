@@ -1,6 +1,34 @@
 # find_phone
 A simple detector to find phones on the floor and report their coordinates in the image frame.
 
+![Detection Visualization](docs/visualization.png)
+
+
+## Usage
+Install dependencies:
+```pip install -r requirements.txt```
+
+Train a model:
+```
+cd find_phone
+python train_phone_finder.py path_to_dataset_folder
+```
+
+Perform inference:
+```
+python find_phone.py path_to_image.jpg
+```
+
+(Optional) Perform inference on a folder:
+```
+python find_phone.py path_to_folder
+```
+
+(Optional) Perform inference with visualization: 
+```
+python find_phone.py path_to_image.jpg --visualize
+```
+
 
 #### Assumptions
 Since the dataset does not contain information regarding the size of the phones, they were assumed to occupy about 10% of the image.
